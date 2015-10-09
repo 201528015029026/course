@@ -32,6 +32,7 @@ def max_2_sum arr
   			end
   		end
   		i=i+1
+	end
   end
   return max1+max2 
 end
@@ -46,39 +47,40 @@ def sum_to_n? arr, n
     end
   end
   if(arr.size==0 && n==0)
-  	return true
+  	return false
   end
   return false
 end
-
 # Part 2
 
 def hello(name)
   # YOUR CODE HERE
-  return "hello,#{name}"
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
-  if s=~/^[A,E,I,O,U,a,e,i,o,u]/
+  if s=~/^[^aeiouAEIOU]/
+  	if(s =~ /^[a-zA-Z]/)
+  		return true
+  	end
   	return false
   else 
-  	return true
+  	return false
   end
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
-  if(s !~ /[0|1]{3,}/)
+  if(s =~ /^[1|0]*$/)
+  	if(s=='0' || s=='00' || s.end_with?('00'))
+  		return true
+  	end
   	return false
   else
-  	if(s.end_with?('00'))
-  		return true
-  	else
-  		return false
-  	end
+  	return false
   end
-end
+end 
 
 # Part 3
 
